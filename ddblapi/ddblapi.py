@@ -39,7 +39,6 @@ class DivineAPI:
             user_id = self.bot_id
 
         url = f'https://divinediscordbots.com/bot/{user_id}/stats'
-        print(url)
 
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=self.headers) as resp:
