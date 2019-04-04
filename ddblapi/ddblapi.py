@@ -48,7 +48,6 @@ class DivineAPI:
                         'error': False,
                         'status': resp.status
                     }
-
                 else:
                     error_json = await resp.json()
                     return {
