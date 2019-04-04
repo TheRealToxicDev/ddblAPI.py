@@ -1,7 +1,18 @@
 # ddblAPI.py
 The official python wrapper of Divine Discord Bot List
 
-### Example usage:
+### Requirements
+- [**+Python3**](https://www.python.org/downloads/)
+- [**aiohttp**](https://pypi.org/project/aiohttp/)
+
+### Installation
+**pip**:
+```
+sudo pip install pyddblapi
+```
+
+
+### Example usage
 
 ```py
 import discord
