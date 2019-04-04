@@ -1,8 +1,8 @@
 # ddblAPI.py
-The official python wrapper of Divine Discord Bot List
+The official Python wrapper of Divine Discord Bot List
 
 ### Requirements
-- [**+Python3.6**](https://www.python.org/downloads/)
+- [**+Python3**](https://www.python.org/downloads/)
 - [**aiohttp**](https://pypi.org/project/aiohttp/)
 
 ### Installation
