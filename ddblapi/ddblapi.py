@@ -16,42 +16,39 @@ class DivineAPI:
         data = json.dumps({
             'server_count': int(server_count)
         })
-        url = f'https://divinediscordbots.com/bot/{self.bot_id}/stats'
+        url = 'https://divinediscordbots.com/bot/{}/stats'.format(self.bot_id)
 
         async with aiohttp.ClientSession() as session:
             async with session.post(url, data=data, headers=self.headers) as resp:
                 if resp.status == 200:
                     return {
                         'response': 'ServerCount Successfully posted  !',
-                        'error': False,
+                        'error': (resp.status == 200),
                         'status': resp.status
                     }
                 else:
                     error_json = await resp.json()
                     return {
                         'response': error_json['error'],
-                        'error': True,
+                        'error': (resp.status == 200),
                         'status': resp.status
                     }
 
     async def get_stats(self, user_id):
-        if not int(user_id):
-            user_id = self.bot_id
-
-        url = f'https://divinediscordbots.com/bot/{user_id}/stats'
+        url = 'https://divinediscordbots.com/bot/{}/stats'.format(user_id)
 
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=self.headers) as resp:
                 if resp.status == 200:
                     return {
                         'response': await resp.json(),
-                        'error': False,
+                        'error': (resp.status == 200),
                         'status': resp.status
                     }
                 else:
                     error_json = await resp.json()
                     return {
                         'response': error_json['error'],
-                        'error': True,
+                        'error': (resp.status == 200),
                         'status': resp.status
                     }
