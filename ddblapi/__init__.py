@@ -1,0 +1,1 @@
+from .ddblapi import DivineAPI
