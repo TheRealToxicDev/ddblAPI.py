@@ -51,3 +51,21 @@ class DivineAPI:
                     'error': (resp.status != 200),
                     'status': resp.status
                 }
+
+    async def get_votes(self):
+        url = 'https://divinediscordbots.com/bot/{}/votes'.format(self.bot_id)
+
+        async with self.session.get(url, headers=self.headers) as resp:
+            if resp.status == 200:
+                return {
+                    'response': await resp.json(),
+                    'error': (resp.status != 200),
+                    'status': resp.status
+                }
+            else:
+                error_json = await resp.json()
+                return {
+                    'response': error_json['error'],
+                    'error': (resp.status != 200),
+                    'status': resp.status
+                }
