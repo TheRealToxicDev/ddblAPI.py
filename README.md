@@ -6,7 +6,7 @@ The official python wrapper of Divine Discord Bot List
 - [**aiohttp**](https://pypi.org/project/aiohttp/)
 
 ### Installation
-**pip**:
+With **pip**:
 ```
 sudo pip install pyddblapi
 ```
